@@ -1,6 +1,5 @@
 import os
 import numpy as np
-import aicrowd
 
 def load_data(type='train', make_val=True):
 
@@ -10,10 +9,6 @@ def load_data(type='train', make_val=True):
     data_path = os.path.join(cwd, 'data/data.npz')
 
     if not os.path.exists(data_path):
-        print('Downloading data...')
-        api = aicrowd.api()
-        api.download('data.zip', path='./data')
-        print('Data downloaded')
         raise NotImplementedError('No function to load the data')
     
     data = np.load(data_path, allow_pickle=True)
